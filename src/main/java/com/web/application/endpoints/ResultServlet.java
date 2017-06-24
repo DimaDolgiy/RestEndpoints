@@ -5,7 +5,7 @@
  */
 package com.web.application.endpoints;
 
-import com.web.application.data.UploadUtils;
+import com.web.application.utils.UploadUtils;
 import java.io.IOException;
 import java.sql.SQLException;
 import javax.servlet.ServletException;

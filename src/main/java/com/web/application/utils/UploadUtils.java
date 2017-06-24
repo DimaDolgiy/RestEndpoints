@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.web.application.data;
+package com.web.application.utils;
 
 import com.google.gson.Gson;
-import com.web.application.converter.ExpectedResult;
+import com.web.application.data.ExpectedResult;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
