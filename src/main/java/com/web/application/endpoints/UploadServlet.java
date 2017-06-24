@@ -6,7 +6,7 @@
 package com.web.application.endpoints;
 
 
-import com.web.application.utils.UploadUtils;
+import com.web.application.data.UploadUtils;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
@@ -47,7 +47,7 @@ public class UploadServlet extends HttpServlet {
 
                 try
                 {
-                    result = UploadUtils.getInstance().processUploadedFile(fileContent, 50000);
+                    result = UploadUtils.getInstance().processUploadedFile(fileContent, 30000);
 
                     if(result)
                     {

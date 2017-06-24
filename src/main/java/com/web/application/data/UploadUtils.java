@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.web.application.utils;
+package com.web.application.data;
 
 import com.google.gson.Gson;
 import com.web.application.converter.ExpectedResult;
@@ -11,11 +11,13 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.LinkedHashMap;
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -70,7 +72,6 @@ public class UploadUtils {
         if (processCount < PROCESSES_LIMIT)
         {
             processCount++;
-            System.out.println("processUploadedFile processCount = " + this);
             Thread th = new Thread(new Runnable() 
             {
                 @Override
@@ -78,19 +79,13 @@ public class UploadUtils {
                 {
                     if (waitTime > 0) 
                     {
-                        System.out.println("processUploadedFile wait: " + waitTime);
                         try {
                             Thread.sleep(waitTime);
                         } catch (InterruptedException ex) {
                             ex.printStackTrace();
                         }
                     }
-                    
-                    System.out.println("processUploadedFile started");
-                    
-                    DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
-
-                    LocalDate localDate = LocalDate.now();
+                    Date date = new Date();
 
                     ByteArrayOutputStream os = new ByteArrayOutputStream();
 
@@ -109,11 +104,13 @@ public class UploadUtils {
 
                     try (Connection connection = dataSource.getConnection()) 
                     {            
-                        Statement statement = connection.createStatement();
+                        PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO expected_result (date_upload, file_data) VALUES ( ? , ? )");
+                        
+                        preparedStatement.setDate(1, new java.sql.Date(date.getTime()));
+                        
+                        preparedStatement.setString(2, fileValue);
 
-                        String insertQuery = "INSERT INTO expected_result (date_upload, file_data) VALUES ('"+ dtf.format(localDate) +"', '"+ fileValue +"');";
-
-                        statement.executeUpdate(insertQuery);
+                        preparedStatement.executeUpdate();
 
                     } catch (SQLException ex) {
                         ex.printStackTrace();

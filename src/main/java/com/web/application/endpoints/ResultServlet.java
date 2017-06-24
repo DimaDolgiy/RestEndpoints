@@ -5,7 +5,7 @@
  */
 package com.web.application.endpoints;
 
-import com.web.application.utils.UploadUtils;
+import com.web.application.data.UploadUtils;
 import java.io.IOException;
 import java.sql.SQLException;
 import javax.servlet.ServletException;
@@ -35,12 +35,12 @@ public class ResultServlet extends HttpServlet {
         {
             String loadedJson = UploadUtils.getInstance().loadResult();
 
-            byte[] bytesArray = loadedJson.getBytes();
+            byte[] bytesArray = loadedJson.getBytes("UTF-8");
 
             response.setContentType("application/json");
             response.setContentLength(bytesArray.length);
             response.setHeader("Content-disposition","attachment;filename="+ "expected-result.json");
-            response.getOutputStream().write(loadedJson.getBytes());
+            response.getOutputStream().write(loadedJson.getBytes("UTF-8"));
 
 
         } catch (SQLException ex) {
