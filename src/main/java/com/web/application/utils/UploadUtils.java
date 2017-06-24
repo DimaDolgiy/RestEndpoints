@@ -140,7 +140,7 @@ public class UploadUtils {
 
             Statement statement = connection.createStatement();
             
-            String selectQuery = "SELECT filedata FROM expected_result";
+            String selectQuery = "SELECT file_data FROM expected_result";
             
             ResultSet resultSet = statement.executeQuery(selectQuery);
             
