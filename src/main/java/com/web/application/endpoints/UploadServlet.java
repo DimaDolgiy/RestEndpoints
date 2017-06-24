@@ -47,7 +47,7 @@ public class UploadServlet extends HttpServlet {
 
                 try
                 {
-                    result = UploadUtils.getInstance().processUploadedFile(fileContent, 50000);
+                    result = UploadUtils.getInstance().processUploadedFile(fileContent, 30000);
 
                     if(result)
                     {
