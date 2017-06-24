@@ -26,10 +26,10 @@
         <div class="container">
             <div class="row">
                     
-                    <div class="jumbotron" style="margin-top: 30px">
+                <div class="jumbotron" style="margin-top: 30px">
                     <h2 style="text-align: center"> Choose file to upload</h2>
                     
-                    <form action="uploadFile" method="post" enctype="multipart/form-data">
+                <form action="uploadFile" method="post" enctype="multipart/form-data">
                         
                     <p>
                         <div class="btn-group">
@@ -51,49 +51,6 @@
                 </form>
             </div>
         </div>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-
-<!--        <div>
-
-            
-            
-            <p>Message: </p>
-
-            <form action="uploadFile" method="post" enctype="multipart/form-data">
-
-                <input type="file" name="uploadedFile" />
-
-                <input type="submit" value="upload" name="upload" />
-                
-                
-                
-                
-            </form>     
-            
-            
-
-        </div>-->
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
