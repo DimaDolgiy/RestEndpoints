@@ -5,7 +5,7 @@
               auth="Container"
               type="javax.sql.DataSource" 
               driverClassName="org.postgresql.Driver"
-              url="jdbc:postgresql://127.0.0.1:5432/test_data"
+              url="jdbc:postgresql://127.0.0.1:5432/upload_data"
               username="postgres" 
               password="postgres" 
               maxActive="20" 

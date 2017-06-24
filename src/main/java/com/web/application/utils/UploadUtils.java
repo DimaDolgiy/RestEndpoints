@@ -111,7 +111,7 @@ public class UploadUtils {
                     {            
                         Statement statement = connection.createStatement();
 
-                        String insertQuery = "INSERT INTO expected_result (data, filedata) VALUES ('"+ dtf.format(localDate) +"', '"+ fileValue +"');";
+                        String insertQuery = "INSERT INTO expected_result (date_upload, file_data) VALUES ('"+ dtf.format(localDate) +"', '"+ fileValue +"');";
 
                         statement.executeUpdate(insertQuery);
 
@@ -148,7 +148,7 @@ public class UploadUtils {
             
             while(resultSet.next())
             {
-                String line = resultSet.getString("filedata");
+                String line = resultSet.getString("file_data");
                 
                 if(line != null)
                 {
