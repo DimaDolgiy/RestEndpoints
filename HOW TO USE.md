@@ -1,11 +1,18 @@
 # RestEndpoints
+Install database :
 
-Установить базу данных  - sudo apt-get install postgresql
-
-Войти в postgresql - sudo -u postgres psql
-
-Создать базу createdb upload_data
-
-Восстановить базу из папки проекта sudo -u postgres psql upload_data < filePath/uploadData.sql
-
-Версия Tomcat-8.0.27
+ sudo apt-get install postgresql
+ 
+ Create db in postgres, after that restore db from project:
+ 
+ sudo -u postgres psql upload_data < filePath/uploadData.sql
+ 
+ Build project in the IDE (I`m used netbeans 8.1, webserver tomcat version 8...)
+  
+ Run and test:
+ 
+ Run app from IDE, on the page you will see three buttons (Choose file, Upload file abd Download result)
+ 
+ 
+ 
+ 
