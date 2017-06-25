@@ -13,7 +13,7 @@ Install database :
  
  Run app from IDE, on the page you will see three buttons (Choose file, Upload file abd Download result)
  
- Click 'Choose file' and select test file in the project package, after when see selected file, click button 'Upload' and then system show the message 'process upload file' reapet this actions three times in 30 seconds to check limit for upload. After that click 'Download result' to see the result in the json file 
+ Click 'Choose file' and select test file 'readMe.txt' in the project package, after when see selected file, click button 'Upload' and then system show the message 'process upload file' reapet this actions three times in 30 seconds to check limit for upload. After that click 'Download result' to see the result in the json file 
  
  
  
